@@ -11,11 +11,11 @@ $(`#booksBtn`).click(function() {
   window.location.replace('./books.html')
 })
 $(`#authorsBtn`).click(function() {
-  console.log('hi');
   window.location.replace('./authors.html')
 })
 
 $.get(url, function(books){
+      console.log(books);
   for (var i = 0; i < books.length; i++) {
     $(`.listOfBooks`).append(
     `<div class="card" style="width: 28rem; margin-right: 1vw;margin-bottom: 1vw">
@@ -33,7 +33,6 @@ $.get(url, function(books){
 })
 
 $.get(url + 'authors', function(authors){
-  console.log(authors);
   for (var i = 0; i < authors.length; i++) {
     $(`.listOfAuthors`).append(
     `<div class="card" style="width: 28rem; margin-right: 1vw;margin-bottom: 1vw">
